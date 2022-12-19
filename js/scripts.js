@@ -5,6 +5,8 @@ distanzaKm = parseInt(distanzaKm);
 console.log(typeof distanzaKm);
 console.log("I chilometri inseriti dall'utente sono:",distanzaKm);
 
+document.getElementById('distanzaKm').innerHTML = distanzaKm;
+
 const prezzoKm = 0.21;
 
 let prezzoBiglietto = distanzaKm * prezzoKm;
@@ -17,6 +19,7 @@ etàPasseggero = parseInt(etàPasseggero);
 console.log(typeof etàPasseggero);
 console.log("L'età del passeggero è:",etàPasseggero);
 
+document.getElementById('etàPasseggero').innerHTML = etàPasseggero;
 
 // let prezzoBigliettointero = distanzaKm * prezzoKm;
 // console.log(prezzoBigliettointero)
@@ -53,4 +56,9 @@ else if (etàPasseggero >= 65){
 else {
     prezzoBiglietto = (prezzoBiglietto .toFixed(2))
     alert(`Il prezzo del biglietto è di ${prezzoBiglietto} €`)
+
+    
+
 }
+
+document.getElementById('prezzoBiglietto').innerHTML = prezzoBiglietto;
