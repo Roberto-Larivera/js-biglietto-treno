@@ -10,7 +10,9 @@ document.getElementById('distanzaKm').innerHTML = distanzaKm;   //scrittura in h
 const prezzoKm = 0.21;  //costante prezzo fisso
 
 let prezzoBiglietto = distanzaKm * prezzoKm;    //variante prezzo biglietto (calcolo)
-prezzoBiglietto = parseInt(prezzoBiglietto);    //trasformazione dati numerici
+//console.log(prezzoBiglietto)
+//prezzoBiglietto = parseInt(prezzoBiglietto);    //trasformazione dati numerici
+//console.log(prezzoBiglietto)
 prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali
 console.log(typeof prezzoBiglietto);    //controllo trasformazione
 console.log(`Prezzo biglietto intero ${prezzoBiglietto} €`) //conferma lettura dati
@@ -22,32 +24,36 @@ console.log("L'età del passeggero è:",etàPasseggero);   //conferma lettura da
 
 document.getElementById('etàPasseggero').innerHTML = etàPasseggero; //scrittura in html dati
 
-
+let messaggio;
 if (etàPasseggero < 18) {
     console.log("Il passeggero è minorenne");   //conferma avvenuta variante
     prezzoBiglietto = (prezzoBiglietto -((prezzoBiglietto / 100) * 20));    //calcolo sconto su variante
-    prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali
+    //prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali
+    messaggio = `Prezzo biglietto scontato del 20% `;
 
-
-    console.log(`Prezzo biglietto scontato del 20% ${prezzoBiglietto} €`);  //conferma lettura dati
-    alert(`Il prezzo del biglietto ridotto del 20% è di ${prezzoBiglietto} €`)  //avviso utente
+    //console.log(`Prezzo biglietto scontato del 20% ${prezzoBiglietto} €`);  //conferma lettura dati
+    //alert(`Il prezzo del biglietto ridotto del 20% è di ${prezzoBiglietto} €`)  //avviso utente
 }
 else if (etàPasseggero >= 65){
     console.log("Il passeggero è over 65"); //conferma avvenuta variante
     prezzoBiglietto = (prezzoBiglietto -((prezzoBiglietto / 100) * 40));    //calcolo sconto su variante
-    prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali
+    //prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali
+    messaggio = `Prezzo biglietto scontato del 40% `;
 
-
-    console.log(`Prezzo biglietto scontato del 40% ${prezzoBiglietto} €`);  //conferma lettura dati
-    alert(`Il prezzo del biglietto ridotto del 40% è di ${prezzoBiglietto} €`)  //avviso utente
+    //console.log(`Prezzo biglietto scontato del 40% ${prezzoBiglietto} €`);  //conferma lettura dati
+    //alert(`Il prezzo del biglietto ridotto del 40% è di ${prezzoBiglietto} €`)  //avviso utente
 }
 else {
-    prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali
+    //prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali
 
-    console.log(`Prezzo biglietto è di ${prezzoBiglietto} €`);  //conferma lettura dati
-    alert(`Il prezzo del biglietto è di ${prezzoBiglietto} €`)  //avviso utente
-
+    //console.log(`Prezzo biglietto è di ${prezzoBiglietto} €`);  //conferma lettura dati
+    //alert(`Il prezzo del biglietto è di ${prezzoBiglietto} €`)  //avviso utente
+    messaggio = `Prezzo biglietto è di `;
     
 
 }
+prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali
+messaggio = messaggio + prezzoBiglietto + ' €';
+console.log(messaggio);  //conferma lettura dati
+alert(messaggio)  //avviso utente
 document.getElementById('prezzoBiglietto').innerHTML = prezzoBiglietto;
