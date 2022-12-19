@@ -11,6 +11,7 @@ const prezzoKm = 0.21;
 
 let prezzoBiglietto = distanzaKm * prezzoKm;
 prezzoBiglietto = parseInt(prezzoBiglietto);
+prezzoBiglietto = prezzoBiglietto.toFixed(2);
 console.log(`Prezzo biglietto intero ${prezzoBiglietto} €`)
 console.log(typeof prezzoBiglietto);
 
@@ -41,24 +42,28 @@ document.getElementById('etàPasseggero').innerHTML = etàPasseggero;
 
 if (etàPasseggero < 18) {
     console.log("Il passeggero è minorenne");
-    prezzoBiglietto = (prezzoBiglietto -((prezzoBiglietto / 100) * 20) .toFixed(2));
+    prezzoBiglietto = (prezzoBiglietto -((prezzoBiglietto / 100) * 20));
+    prezzoBiglietto = prezzoBiglietto.toFixed(2);
+
 
     console.log(prezzoBiglietto);
     alert(`Il prezzo del biglietto ridotto del 20% è di ${prezzoBiglietto} €`)
 }
 else if (etàPasseggero >= 65){
     console.log("Il passeggero è over 65");
-    prezzoBiglietto = (prezzoBiglietto -((prezzoBiglietto / 100) * 40) .toFixed(2));
+    prezzoBiglietto = (prezzoBiglietto -((prezzoBiglietto / 100) * 40));
+    prezzoBiglietto = prezzoBiglietto.toFixed(2);
+
 
     console.log(prezzoBiglietto);
     alert(`Il prezzo del biglietto ridotto del 40% è di ${prezzoBiglietto} €`)
 }
 else {
-    prezzoBiglietto = (prezzoBiglietto .toFixed(2))
+    prezzoBiglietto = prezzoBiglietto.toFixed(2);
+
     alert(`Il prezzo del biglietto è di ${prezzoBiglietto} €`)
 
     
 
 }
-
 document.getElementById('prezzoBiglietto').innerHTML = prezzoBiglietto;
