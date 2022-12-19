@@ -52,7 +52,7 @@ else {
     
 
 }
-prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali
+//prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali //******alt
 messaggio = messaggio + prezzoBiglietto + ' €';
 console.log(messaggio);  //conferma lettura dati
 alert(messaggio)  //avviso utente
