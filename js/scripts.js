@@ -38,19 +38,19 @@ console.log("L'età del passeggero è:",etàPasseggero);
 
 if (etàPasseggero < 18) {
     console.log("Il passeggero è minorenne");
-    prezzoBiglietto = (prezzoBiglietto -((prezzoBiglietto / 100) * 20));
+    prezzoBiglietto = (prezzoBiglietto -((prezzoBiglietto / 100) * 20) .toFixed(2));
 
     console.log(prezzoBiglietto);
     alert(`Il prezzo del biglietto ridotto del 20% è di ${prezzoBiglietto} €`)
 }
 else if (etàPasseggero >= 65){
     console.log("Il passeggero è over 65");
-    prezzoBiglietto = (prezzoBiglietto -((prezzoBiglietto / 100) * 40));
+    prezzoBiglietto = (prezzoBiglietto -((prezzoBiglietto / 100) * 40) .toFixed(2));
 
     console.log(prezzoBiglietto);
     alert(`Il prezzo del biglietto ridotto del 40% è di ${prezzoBiglietto} €`)
 }
 else {
-    prezzoBiglietto = prezzoBiglietto
+    prezzoBiglietto = (prezzoBiglietto .toFixed(2))
     alert(`Il prezzo del biglietto è di ${prezzoBiglietto} €`)
 }
